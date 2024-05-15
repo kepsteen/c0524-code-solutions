@@ -31,7 +31,7 @@ console.log('Get first name of Cody Epstein: ', getFirstName(person));
 const getLastElement = (arr: unknown[]): unknown => arr[arr.length - 1];
 console.log('Get last element of [0,1,2]: ', getLastElement([0, 1, 2]));
 
-const callOtherFunction = (otherFunction: any, params: unknown): unknown =>
+const callOtherFunction = (otherFunction: Function, params: unknown): any =>
   otherFunction(params);
 console.log(
   'value when greet and Cody are passed to callOtherFunction: ',
