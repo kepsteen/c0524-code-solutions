@@ -20,15 +20,26 @@ function startsWithJ(string) {
     return false;
   }
 }
-function isOldEnoughToDrink(age) {
-  if (age >= 21) {
+function isOldEnoughToDrink(person) {
+  if (person.age >= 21) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function isOldEnoughToDrive(person) {
+  if (person.age >= 16) {
     return true;
   } else {
     return false;
   }
 }
 function isOldEnoughToDrinkAndDrive(person) {
-  return false;
+  if (person) {
+    return false;
+  } else {
+    return false;
+  }
 }
 function categorizeAcidity(pH) {
   if (pH === 7) {
