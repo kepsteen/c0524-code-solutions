@@ -2,10 +2,10 @@
 /* exported omit */
 function omit(source, keys) {
   const newObj = {};
-  for (let key in source) {
+  for (const key in source) {
     if (!keys.includes(key)) {
-      let keyToAdd = key;
-      let valueToAdd = source[key];
+      const keyToAdd = key;
+      const valueToAdd = source[key];
       newObj[keyToAdd] = valueToAdd;
     }
   }

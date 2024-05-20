@@ -2,9 +2,9 @@
 /* exported invert */
 function invert(source) {
   const newObj = {};
-  for (let key in source) {
-    let keyToAdd = source[key];
-    let valueToAdd = key;
+  for (const key in source) {
+    const keyToAdd = source[key];
+    const valueToAdd = key;
     newObj[keyToAdd] = valueToAdd;
   }
   return newObj;
