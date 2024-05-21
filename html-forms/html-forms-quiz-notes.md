@@ -18,6 +18,7 @@ text, email, password
 
 - Is an HTML `<input>` element a block element or an inline element?
   inline element
+  inline element
 
 ## Notes
 
