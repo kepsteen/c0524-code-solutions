@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+button {
+  height: 45px;
+  width: 170px;
+  padding: 2px 12px;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+tbody {
+  font-weight: lighter;
+}
+
+tr:nth-child(odd) {
+  background-color: #cfc9c8;
+}
+
+thead {
+  color: white;
+  background-color: black;
+  font-weight: 600;
+}
+
+#grade-header {
+  background-color: black;
+}
