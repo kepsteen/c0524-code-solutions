@@ -1,0 +1,63 @@
+form {
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+form,
+button {
+  font-family: 'Brandon Grotesque', sans-serif;
+}
+
+form > h3 {
+  text-align: center;
+  color: #eb6b26;
+}
+
+input,
+select {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 30px;
+  border-color: #cfc9c8;
+  border-radius: 6px;
+  border-style: solid;
+  font-family: 'Brandon Grotesque', sans-serif;
+}
+
+input::placeholder {
+  color: #dad5cc;
+}
+
+select {
+  background-color: #f1ebe9;
+}
+
+select:first-child {
+  color: #3b3937;
+}
+
+form label {
+  margin-left: 3%;
+  margin-right: auto;
+  font-size: 0.7em;
+}
+
+button {
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: 10px;
+  background-color: #eb6b26;
+  color: white;
+  border-radius: 20% / 50%;
+  border-color: #eb6b26;
+  padding: 5px 20px;
+  border-style: solid;
+  display: block;
+}
+
+.brochure-contact {
+  margin-bottom: 6px;
+}
