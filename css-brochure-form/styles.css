@@ -1,6 +1,7 @@
 form {
   width: 400px;
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 form,
@@ -39,7 +40,7 @@ select:first-child {
 }
 
 form label {
-  margin-left: 1%;
+  margin-left: 3%;
   margin-right: auto;
   font-size: 0.7em;
 }
@@ -55,4 +56,8 @@ button {
   padding: 5px 20px;
   border-style: solid;
   display: block;
+}
+
+.brochure-contact {
+  margin-bottom: 6px;
 }
