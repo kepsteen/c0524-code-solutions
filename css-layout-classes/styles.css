@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  max-height: 100vh;
+}
+
+.row {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-basis: auto;
+}
+
+.column-one-third {
+  width: calc(100% / 3);
+  flex-basis: 33%;
+}
+
+.column-two-thirds {
+  width: calc((100% * 2 / 3));
+}
+
+.column-one-fourth {
+  width: calc(100% / 4);
+}
+
+img {
+  max-width: 100%;
+}
