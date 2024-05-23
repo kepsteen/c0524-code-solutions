@@ -14,7 +14,7 @@
 }
 
 .column-one-third {
-  flex-basis: 33%;
+  flex-basis: calc(100% / 3);
 }
 
 .column-two-thirds {
