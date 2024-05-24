@@ -7,21 +7,18 @@
 
 .row {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
 }
 
 .column-full {
-  justify-self: center;
   flex-basis: 100%;
 }
 
 .column-third {
-  display: flex;
   flex-basis: calc(100% / 3);
 }
 
 .feature-cards {
+  justify-content: space-between;
   height: 230px;
   max-width: 72%;
   margin-left: auto;
@@ -31,6 +28,7 @@
 }
 
 .card {
+  display: flex;
   flex-direction: column;
   justify-content: baseline;
   align-items: center;
@@ -65,6 +63,7 @@
 
 .feature-section-tile {
   text-align: center;
+  justify-self: center;
 }
 
 .feature-card-img {
