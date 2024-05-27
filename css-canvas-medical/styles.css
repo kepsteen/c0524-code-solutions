@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+}
+
+section {
+  margin: 0;
+}
+
+body {
+  margin-top: 30px;
+}
+
+.row {
+  display: flex;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.flex-border {
+  border: 2px solid red;
+}
+
+.flex-border > * {
+  outline: 2px dashed chartreuse;
+}
+
+.column-full {
+  flex-basis: 100%;
+}
+
+.column-one-fourth {
+  flex-basis: 25%;
+}
+
+.column-one-third {
+  flex-basis: calc(100% / 3);
+}
+
+.column-one-half {
+  flex-basis: calc(100% / 2);
+}
+
+.column-one-fifth {
+  flex-basis: calc(100% / 5);
+}
+
+.column-fill {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.nav-bar {
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.nav-links {
+  gap: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-links > a {
+  white-space: nowrap;
+}
+
+#logo-blue {
+  width: 120px;
+  height: 30px;
+}
+
+.nav-button {
+  background-color: white;
+  border-style: none;
+  color: #bdbdbd;
+  text-decoration-line: none;
+}
+
+.nav-button:hover {
+  color: black;
+}
+
+#contact-button {
+  display: block;
+  color: white;
+  background-color: #284465;
+  width: 100px;
+  text-align: center;
+  align-self: center;
+  padding: 10px;
+  border-radius: 0.2rem;
+}
+
+#contact-button:hover {
+  background-color: #3d6797;
+}
+
+.blue-button {
+  display: block;
+  color: white;
+  background-color: #284465;
+  width: 200px;
+  text-align: center;
+  align-self: flex-start;
+  padding: 20px;
+  border-radius: 0.2rem;
+  z-index: 3;
+  text-decoration-line: none;
+  font-family: Avenir, sans-serif;
+  font-stretch: expanded;
+  font-size: 20px;
+}
+
+.border {
+  display: block;
+  border-bottom: 3px solid rgb(229, 231, 227);
+}
+
+.hero-image {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#hero-image {
+  max-width: 80%;
+  max-height: 100vh;
+}
+
+.hero-overlay {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  position: absolute;
+  max-height: 100%;
+  max-width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 30px;
+  bottom: 0;
+  right: 48%;
+  padding: 40px;
+}
+
+.hero-text {
+  font-family: 'Tiempos Headline', sans-serif;
+  text-align: left;
+  color: white;
+  z-index: 3;
+}
+
+h1.hero-text {
+  color: white;
+  font-size: 50px;
+  margin-bottom: 3rem;
+}
+
+p.hero-text {
+  margin-top: 0;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-stretch: ultra-expanded;
+  line-height: 2;
+  letter-spacing: 2px;
+  margin-bottom: 5rem;
+}
+
+.locations-title {
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  line-height: 1.6;
+  color: #7f7f7f;
+  font-family: 'Tiempos Headline', sans-serif;
+}
+
+.locations {
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  height: 300px;
+  color: #7f7f7f;
+}
+
+.locations-title h2 {
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #605f5f;
+}
+
+.locations ul {
+  list-style-type: none;
+}
+
+.locations li {
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.locations-section {
+  margin: 3rem;
+  background-color: #fafafa;
+  text-align: center;
+  border-bottom: 1px solid #605f5f;
+}
+
+.call-to-action {
+  margin: 0;
+  align-items: baseline;
+  font-family: 'Tiempos Headline', sans-serif;
+  color: #7f7f7f;
+}
+
+.call-to-action > h1 {
+  margin-bottom: 0;
+  color: #605f5f;
+}
+
+.footer {
+  background-color: #525250;
+}
+
+.footer-address {
+  padding: 0;
+  margin-left: 30px;
+}
+
+.footer-content {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.footer-content * {
+  color: white;
+  font-family: Avenir, sans-serif;
+  font-size: 0.8rem;
+}
+
+.footer-logo {
+  padding-bottom: 30px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.footer-column > a {
+  text-decoration: none;
+}
+
+.footer-column-title {
+  font-size: 1rem;
+}
+
+.legal-content {
+  gap: 20px;
+  background-color: #fafafa;
+}
+
+.legal-content * {
+  color: #787878;
+  text-decoration: none;
+}
