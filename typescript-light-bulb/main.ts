@@ -1,7 +1,9 @@
 const $lightBulb = document.querySelector('#light-bulb');
 const $body = document.querySelector('body');
 
-if (!$lightBulb || !$body) throw new Error('No light bulb or body bro');
+if (!$lightBulb) throw new Error('No light bulb found');
+if (!$body) throw new Error('No body found');
+
 const classes = $lightBulb?.classList;
 const classesBody = $body.classList;
 
