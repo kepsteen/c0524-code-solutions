@@ -1,11 +1,3 @@
-// function changeTabs(
-//   tabContainer: HTMLDivElement,
-//   tabElements: NodeListOf<HTMLDivElement>,
-//   event: Event
-// ): void {
-
-// }
-
 const $tabContainer = document.querySelector('.tab-container');
 const $tabElements = document.querySelectorAll('.tab');
 const $viewElements = document.querySelectorAll('.view');
@@ -15,6 +7,7 @@ if (!$tabElements) throw new Error('tab Elements not found');
 if (!$viewElements) throw new Error('view elements not found');
 
 $tabContainer.addEventListener('click', (event: Event) => {
+  // Change the Tab by toggling active class on tabElement
   const $eventTarget = event.target as HTMLDivElement;
   console.log($eventTarget.textContent);
   for (let i = 0; i < $tabElements.length; i++) {
@@ -24,6 +17,8 @@ $tabContainer.addEventListener('click', (event: Event) => {
       $tabElements[i].classList.toggle('active');
     }
   }
+
+  // Change the view of corresponding tabElement
   const $eventTargetDataView = $eventTarget.dataset.view;
   for (let i = 0; i < $viewElements.length; i++) {
     const $viewElement = $viewElements[i] as HTMLDivElement;
