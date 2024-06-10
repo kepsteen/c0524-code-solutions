@@ -1,10 +1,3 @@
-interface PokemonImg {
-  URL: string;
-  alt: string;
-  class: string;
-  id: string;
-}
-
 const $carousel = document.querySelector(
   '.carousel-container'
 ) as HTMLDivElement;
@@ -14,58 +7,25 @@ const $imageNodeList = document.querySelectorAll(
 const $circleNodeList = document.querySelectorAll(
   '.fa-circle'
 ) as NodeListOf<HTMLElement>;
+const $faster = document.querySelector('#faster') as HTMLAnchorElement;
 
 if (!$carousel) throw new Error('no carousel found');
 if (!$imageNodeList) throw new Error('no image node list found');
 if (!$circleNodeList) throw new Error('no circle node list found');
-
-const images: PokemonImg[] = [
-  {
-    URL: 'images/001.png',
-    alt: 'Bulbasaur',
-    class: 'carousel-img',
-    id: 'bulbasaur',
-  },
-  {
-    URL: 'images/004.png',
-    alt: 'Charizard',
-    class: 'carousel-img',
-    id: 'charizard',
-  },
-  {
-    URL: 'images/007.png',
-    alt: 'squirtle',
-    class: 'carousel-img',
-    id: 'squirtle',
-  },
-  {
-    URL: 'images/025.png',
-    alt: 'Pikachu',
-    class: 'carousel-img',
-    id: 'pikachu',
-  },
-  {
-    URL: 'images/039.png',
-    alt: 'Jigglypuff',
-    class: 'carousel-img',
-    id: 'jigglypuff',
-  },
-];
+if (!$faster) throw new Error('faster button not found');
 
 let index = 0;
-const delay = 3000;
+let delay = 3000;
 
 function handleClick(direction: string): void {
   if (direction === 'left') {
-    // if click left decrement index
     index--;
   } else if (direction === 'right') {
-    // if click right increment index
     index++;
   }
   if (index < 0) {
-    index = images.length - 1;
-  } else if (index > images.length - 1) {
+    index = $imageNodeList.length - 1;
+  } else if (index > $imageNodeList.length - 1) {
     index = 0;
   }
 }
@@ -88,7 +48,6 @@ function resetTimer(): void {
   clearInterval(intervalId);
   intervalId = setInterval(() => {
     handleClick('right');
-    renderImg(index);
   }, delay);
 }
 
@@ -114,3 +73,11 @@ let intervalId = setInterval((): void => {
   handleClick('right');
   renderImg(index);
 }, 3000);
+
+$faster.addEventListener('click', (): void => {
+  if (delay > 300) {
+    delay -= 300;
+    console.log(delay);
+  }
+  resetTimer();
+});
