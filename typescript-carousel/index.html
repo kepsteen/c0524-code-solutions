@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeScript Carousel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="carousel-container">
+      <div class="flex justify-center">
+        <div class="icon flex justify-center align-center">
+          <i class="fa-solid fa-chevron-left fa-2xl"></i>
+        </div>
+        <div class="img">
+          <img
+            src="images/001.png"
+            class="carousel-img"
+            alt="Bulbasaur"
+            id="bulbasaur" />
+          <img
+            src="images/004.png"
+            class="carousel-img hidden"
+            alt="Charizard"
+            id="charizard" />
+          <img
+            src="images/007.png"
+            class="carousel-img hidden"
+            alt="squirtle"
+            id="squirtle" />
+          <img
+            src="images/025.png"
+            class="carousel-img hidden"
+            alt="Pikachu"
+            id="pikachu" />
+          <img
+            src="images/039.png"
+            class="carousel-img hidden"
+            alt="jigglypuff"
+            id="jigglypuff" />
+          <div class="flex justify-center cards">
+            <i class="fa-solid fa-circle fa-xl" data-index="0"></i>
+            <i class="fa-regular fa-circle fa-xl" data-index="1"></i>
+            <i class="fa-regular fa-circle fa-xl" data-index="2"></i>
+            <i class="fa-regular fa-circle fa-xl" data-index="3"></i>
+            <i class="fa-regular fa-circle fa-xl" data-index="4"></i>
+            <!-- fa-regular to fa-solid for filled circle -->
+          </div>
+        </div>
+        <div class="icon flex justify-center align-center">
+          <i class="fa-solid fa-chevron-right fa-2xl"></i>
+        </div>
+      </div>
+    </div>
+    <div class="container flex justify-center button">
+      <a href="#" id="faster">FASTER</a>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
