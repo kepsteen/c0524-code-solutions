@@ -48,25 +48,28 @@ function resetTimer(): void {
   clearInterval(intervalId);
   intervalId = setInterval(() => {
     handleClick('right');
+    renderImg(index);
   }, delay);
 }
 
 $carousel.addEventListener('click', (event: Event) => {
   const $eventTarget = event.target as HTMLElement;
   if ($eventTarget.classList.contains('fa-chevron-left')) {
-    resetTimer();
     handleClick('left');
-  } else if ($eventTarget.classList.contains('fa-chevron-right')) {
+    renderImg(index);
     resetTimer();
+  } else if ($eventTarget.classList.contains('fa-chevron-right')) {
     handleClick('right');
+    renderImg(index);
+    resetTimer();
   } else if (
     $eventTarget.classList.contains('fa-circle') &&
     $eventTarget.dataset.index
   ) {
-    resetTimer();
     index = parseInt($eventTarget.dataset.index);
+    renderImg(index);
+    resetTimer();
   }
-  renderImg(index);
 });
 
 let intervalId = setInterval((): void => {
@@ -77,7 +80,6 @@ let intervalId = setInterval((): void => {
 $faster.addEventListener('click', (): void => {
   if (delay > 300) {
     delay -= 300;
-    console.log(delay);
   }
   resetTimer();
 });

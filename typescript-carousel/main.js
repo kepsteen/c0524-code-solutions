@@ -38,24 +38,27 @@ function resetTimer() {
   clearInterval(intervalId);
   intervalId = setInterval(() => {
     handleClick('right');
+    renderImg(index);
   }, delay);
 }
 $carousel.addEventListener('click', (event) => {
   const $eventTarget = event.target;
   if ($eventTarget.classList.contains('fa-chevron-left')) {
-    resetTimer();
     handleClick('left');
-  } else if ($eventTarget.classList.contains('fa-chevron-right')) {
+    renderImg(index);
     resetTimer();
+  } else if ($eventTarget.classList.contains('fa-chevron-right')) {
     handleClick('right');
+    renderImg(index);
+    resetTimer();
   } else if (
     $eventTarget.classList.contains('fa-circle') &&
     $eventTarget.dataset.index
   ) {
-    resetTimer();
     index = parseInt($eventTarget.dataset.index);
+    renderImg(index);
+    resetTimer();
   }
-  renderImg(index);
 });
 let intervalId = setInterval(() => {
   handleClick('right');
@@ -64,7 +67,6 @@ let intervalId = setInterval(() => {
 $faster.addEventListener('click', () => {
   if (delay > 300) {
     delay -= 300;
-    console.log(delay);
   }
   resetTimer();
 });
