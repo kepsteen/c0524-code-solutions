@@ -12,8 +12,12 @@ interface Business {
   employees: Record<string, Employee>;
 }
 
-function checkIfFullTime(daysWorking: string[]): boolean {
-  return daysWorking.length >= 5;
+function checkIfFullTime(employeeObj: Employee): void {
+  if (employeeObj.daysOfWeekWorking.length >= 5) {
+    employeeObj.fullTime = true;
+  } else {
+    employeeObj.fullTime = false;
+  }
 }
 
 async function addEmployees(): Promise<void> {
@@ -31,11 +35,9 @@ async function addEmployees(): Promise<void> {
         randomDays.push(weekdays.splice(randomIndex, 1)[0]);
       }
       randomDays.push('Sat', 'Sun');
-      const fullTimeStatus = checkIfFullTime(randomDays);
       business.employees[users[i].name] = {
         position: randomJob,
         daysOfWeekWorking: randomDays,
-        fullTime: fullTimeStatus,
       };
       business.totalEmployees++;
     }
@@ -50,6 +52,13 @@ function deleteEmployee(employeeName: string): void {
     business.totalEmployees--;
   } else {
     console.log('Employee not found');
+  }
+}
+
+function addWeekends(): void {
+  business.daysOpen.push('Sat', 'Sun');
+  for (const employee in business.employees) {
+    business.employees[employee].daysOfWeekWorking.push('Sat', 'Sun');
   }
 }
 
@@ -70,20 +79,35 @@ const jobs = [
 const business: Business = {
   opens: '8:00am',
   closes: '5:00pm',
-  totalEmployees: 0,
+  totalEmployees: 4,
   daysOpen: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-  employees: {},
+  employees: {
+    Tim: {
+      position: 'CEO',
+      daysOfWeekWorking: ['Mon', 'Tue', 'Wed', 'Thu'],
+    },
+    Tom: {
+      position: 'Unpaid Junior Development Associate',
+      daysOfWeekWorking: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+    },
+    Tam: {
+      position: 'CTO',
+      daysOfWeekWorking: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+    },
+    Tammy: {
+      position: 'CFO',
+      daysOfWeekWorking: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+    },
+  },
 };
-function addWeekends(): void {
-  business.daysOpen.push('Sat', 'Sun');
-  for (const employee in business.employees) {
-    business.employees[employee].daysOfWeekWorking.push('Sat', 'Sun');
-  }
-}
 
 window.addEventListener('DOMContentLoaded', async () => {
   addWeekends();
   await addEmployees();
+  for (const employee in business.employees) {
+    const employeeObj = business.employees[employee];
+    checkIfFullTime(employeeObj);
+  }
   deleteEmployee('Clementine Bauch');
   console.log(business);
 });
