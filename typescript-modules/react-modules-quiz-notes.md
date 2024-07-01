@@ -6,7 +6,11 @@ Answer the following questions in the provided markdown file before turning in t
 
 - What are modules?
 
+Modules are collections of code in external files
+
 - What is the difference between named and default imports?
+
+Default imports allow for the content to be named in the import, while named imports are named when exported.
 
 - What is the difference between named and default exports?
 
