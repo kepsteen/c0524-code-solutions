@@ -6,11 +6,19 @@ Answer the following questions in the provided markdown file before turning in t
 
 - What is React?
 
+React is a javascript library that allows developers to easily build out large scale and complex projects by breaking up functionality into reusable components
+
 - What is a React component?
+
+A react component is a collection of all the necessary elements (HTML, CSS and Javascript) to build out one piece of functionality
 
 - How do you mount a React app (root component) to the DOM?
 
+Using the export default keyword
+
 - What are some other popular frontend frameworks?
+
+Angular and Vue
 
 ## Notes
 
