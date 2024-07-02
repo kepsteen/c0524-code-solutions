@@ -1,3 +1,7 @@
-export function Header() {
-  return <h1>React Image Bank</h1>;
+type Props = {
+  headerText: string;
+};
+
+export function Header({ headerText }: Props) {
+  return <h1>{headerText}</h1>;
 }

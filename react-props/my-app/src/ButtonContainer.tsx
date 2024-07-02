@@ -1,7 +1,11 @@
-export function ButtonContainer() {
+type Props = {
+  buttonText: string;
+};
+
+export function ButtonContainer({ buttonText }: Props) {
   return (
     <div>
-      <button>Click For Next Image</button>
+      <button>{buttonText}</button>
     </div>
   );
 }
