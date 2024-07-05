@@ -3,7 +3,7 @@ export function PasswordInput() {
     <>
       <form action="" className="flex gap-4">
         <label htmlFor="">Enter Your Password: </label>
-        <input type="text" />
+        <input type="text" className="border-2 border-black" />
       </form>
     </>
   );
