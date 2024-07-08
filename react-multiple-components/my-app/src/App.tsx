@@ -13,7 +13,7 @@ const items = [
 ];
 
 function App() {
-  const [selectedIndex, setSelectedIndex] = useState<number>(1);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   return (
     <>
@@ -29,6 +29,7 @@ function App() {
           items={items}
           selectedIndex={selectedIndex}
           setSelectedIndex={setSelectedIndex}
+          lastIndex={items.length - 1}
         />
         <BannerButton
           buttonName={'Next'}

@@ -3,6 +3,9 @@ type BannerButtonProps = {
   setSelectedIndex: (value: number) => void;
   selectedIndex: number;
   lastIndex: number;
+  items?: string[];
+  children?: React.ReactNode;
+  style?: string;
 };
 
 export function BannerButton({
@@ -18,20 +21,23 @@ export function BannerButton({
       } else {
         setSelectedIndex(selectedIndex + 1);
       }
-    } else {
+    } else if (buttonName === 'Prev') {
       if (selectedIndex === 0) {
         setSelectedIndex(lastIndex);
       } else {
         setSelectedIndex(selectedIndex - 1);
       }
+    } else {
+      setSelectedIndex(parseInt(buttonName));
     }
   }
   return (
     <>
       <button
         onClick={handleClick}
-        className="border-4 border-white rounded-none w-max">
-        {buttonName}
+        className={`border-4 border-white rounded-md w-max text-xl font-bold
+        ${parseInt(buttonName) === selectedIndex ? 'bg-slate-600' : ''}`}>
+        {buttonName !== 'Index' ? buttonName : ''}
       </button>
     </>
   );
