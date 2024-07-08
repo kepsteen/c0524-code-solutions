@@ -1,32 +1,41 @@
+import { useState } from 'react';
 import { BannerButton } from './BannerButton';
+import { Indicators } from './Indicators';
 
-type BannerProps = {
-  items: string[];
-  selectedIndex: number;
-  setSelectedIndex: (value: number) => void;
-  lastIndex: number;
-};
+const items = [
+  'Aardvark',
+  'Bengal',
+  'Caterpillar',
+  'Dromedary',
+  'Elephant',
+  'Ferret',
+];
 
-export function RotatingBanner({
-  items,
-  selectedIndex,
-  setSelectedIndex,
-  lastIndex,
-}: BannerProps) {
+export function RotatingBanner() {
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
   return (
     <>
-      <ul className="flex gap-4">
-        {items.map((item, index) => (
-          <li key={item}>
-            <BannerButton
-              buttonName={`${index}`}
-              setSelectedIndex={setSelectedIndex}
-              selectedIndex={selectedIndex}
-              lastIndex={lastIndex}
-              items={items}></BannerButton>
-          </li>
-        ))}
-      </ul>
+      <div className="flex flex-col items-center gap-4 grow-0">
+        <h1>{items[selectedIndex]}</h1>
+        <BannerButton
+          buttonName={'Prev'}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+          lastIndex={items.length - 1}
+        />
+        <Indicators
+          items={items}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+          lastIndex={items.length - 1}
+        />
+        <BannerButton
+          buttonName={'Next'}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+          lastIndex={items.length - 1}
+        />
+      </div>
     </>
   );
 }
