@@ -1,7 +1,7 @@
 import { PiCaretDoubleLeftBold, PiCaretDoubleRightBold } from 'react-icons/pi';
 import { FaCircle, FaRegCircle } from 'react-icons/fa6';
 import { Image } from '../App';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 type Props = {
   images: Image[];
@@ -10,10 +10,16 @@ type Props = {
 export function Carousel({ images }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  const handleRightClick = useCallback(() => {
+    selectedIndex < images.length - 1
+      ? setSelectedIndex(selectedIndex + 1)
+      : setSelectedIndex(0);
+  }, [selectedIndex, images.length]);
+
   useEffect(() => {
     const timeoutId = setTimeout(handleRightClick, 3000);
     return () => clearTimeout(timeoutId);
-  }, [selectedIndex]);
+  }, [handleRightClick]);
 
   function handleLeftClick() {
     selectedIndex > 0
@@ -21,11 +27,6 @@ export function Carousel({ images }: Props) {
       : setSelectedIndex(images.length - 1);
   }
 
-  function handleRightClick() {
-    selectedIndex < images.length - 1
-      ? setSelectedIndex(selectedIndex + 1)
-      : setSelectedIndex(0);
-  }
   return (
     <>
       <div className="flex items-center gap-4">
