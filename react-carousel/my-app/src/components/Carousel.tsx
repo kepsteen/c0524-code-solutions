@@ -11,11 +11,7 @@ export function Carousel({ images }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      selectedIndex < images.length - 1
-        ? setSelectedIndex(selectedIndex + 1)
-        : setSelectedIndex(0);
-    }, 3000);
+    const timeoutId = setTimeout(handleRightClick, 3000);
     return () => clearTimeout(timeoutId);
   }, [selectedIndex]);
 
