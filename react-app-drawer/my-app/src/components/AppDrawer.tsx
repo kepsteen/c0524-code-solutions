@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import './Header.css';
+import './AppDrawer.css';
 
 export type MenuItem = {
   name: string;
@@ -30,7 +30,7 @@ export function AppDrawer({ menuItems }: Props) {
           className="relative flex flex-col gap-1 px-6">
           <div
             className={`h-[6px] transition-all ease-in-out rounded-md bg-gray-700 w-7 ${
-              isOpen && 'rotate-45 absolute top-2'
+              isOpen && 'bg-red-500 rotate-45 absolute top-2'
             }`}></div>
           <div
             className={`h-[6px] rounded-md bg-gray-700 w-7 ${
@@ -38,7 +38,7 @@ export function AppDrawer({ menuItems }: Props) {
             }`}></div>
           <div
             className={`h-[6px] transition-all ease-in-out rounded-md bg-gray-700 w-7 ${
-              isOpen && '-rotate-45 absolute top-2'
+              isOpen && 'bg-red-500 -rotate-45 absolute top-2'
             }`}></div>
         </button>
         <h1
