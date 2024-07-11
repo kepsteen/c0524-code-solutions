@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { Product, readProduct, toDollars } from '../lib';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -7,19 +7,17 @@ import { PiCaretDoubleLeftBold } from 'react-icons/pi';
 export function Details() {
   const { productId } = useParams();
   const [product, setProduct] = useState<Product | null>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProduct = async () => {
+      console.log('fetching product');
       try {
         if (!productId) {
-          navigate('*');
-          return;
+          throw new Error('incorrect product Id');
         }
         const data = await readProduct(parseInt(productId));
         if (!data) {
-          navigate('*');
-          return;
+          throw new Error('error fetching data');
         }
         setProduct(data);
       } catch (error) {
@@ -27,11 +25,10 @@ export function Details() {
       }
     };
     fetchProduct();
-  });
+  }, [productId]);
 
-  if (product === null) {
-    navigate('*');
-    return;
+  if (!product) {
+    return <div>Product not found.</div>;
   }
 
   function handleAddClick(name: string) {
@@ -40,7 +37,7 @@ export function Details() {
   return (
     <section className="max-w-[1000px] mx-auto">
       <div className="flex flex-col gap-4 px-4 mt-2 border-2 border-gray-200">
-        <Link to={'/'} className="flex items-center pl-6 mt-2">
+        <Link to="/" className="flex items-center pl-6 mt-2">
           <PiCaretDoubleLeftBold />
           Back to Catalog
         </Link>

@@ -7,16 +7,15 @@ export function Catalog() {
   const [products, setProducts] = useState<Product[]>([]);
   useEffect(() => {
     const fetchProducts = async () => {
-      const data = await readCatalog();
-      setProducts(data);
-      console.log('products fetched');
+      try {
+        const data = await readCatalog();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error fetching products', error);
+      }
     };
-    try {
-      fetchProducts();
-    } catch (error) {
-      console.error(error);
-    }
-  }, [products]);
+    fetchProducts();
+  }, []);
   return (
     <section className="max-w-[1000px] px-4 mx-auto mt-2 mb-6">
       <h1 className="pb-5 text-5xl border-b-4 border-b-gray-200">Catalog</h1>

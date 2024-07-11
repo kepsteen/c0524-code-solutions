@@ -9,16 +9,12 @@ import { NotFound } from './pages/NotFound';
 function App() {
   return (
     <>
-      {/* <Header />
-      <Catalog products={products} />
-      <Details /> */}
-
       <Routes>
         <Route path="/" element={<Header />}>
-          <Route index element={<Catalog />}></Route>
-          <Route path="/details/:productId" element={<Details />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
+          <Route index element={<Catalog />} />
+          <Route path="details/:productId" element={<Details />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>

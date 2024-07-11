@@ -8,12 +8,12 @@ export function Header() {
         <nav>
           <ul className="flex gap-6 pl-6">
             <li>
-              <Link to={'/about'} className="text-white">
+              <Link to="/about" className="text-white">
                 About
               </Link>
             </li>
             <li>
-              <Link to={'/'} className="text-white">
+              <Link to="/" className="text-white">
                 Catalog
               </Link>
             </li>
