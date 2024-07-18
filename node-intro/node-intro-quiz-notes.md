@@ -14,7 +14,11 @@ It is a javascript runtime that allows javascript to run outside of the browser
 
 - What are environment variables and how do you access them in Node.js?
 
+environment variables are variables that are localized to your environment and are used to store secret information like passwords or API keys
+
 - What is a REPL?
+
+a computer environment where users inputs are read and evaluated
 
 ## Notes
 
