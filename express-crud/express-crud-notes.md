@@ -1,5 +1,17 @@
 # express-crud-notes
 
+Type the data to be returned and use a generic like so
+
+```typescript
+interface Grade {
+  name: string;
+  course: string;
+  score: number;
+}
+
+const result = await db.query<Grade>(sql);
+```
+
 ## Notes
 
 All student notes should be written here.
