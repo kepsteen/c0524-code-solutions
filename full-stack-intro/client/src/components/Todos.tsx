@@ -66,6 +66,7 @@ export function Todos() {
         },
         body: JSON.stringify({ ...todo, isCompleted: !todo.isCompleted }),
       });
+      if (!response.ok) throw new Error(`Response status: ${response.status}`);
       const updatedTodo = (await response.json()) as Todo;
       const todosUpdated = todos.map((todo) =>
         todo.todoId === updatedTodo.todoId ? (todo = updatedTodo) : todo
