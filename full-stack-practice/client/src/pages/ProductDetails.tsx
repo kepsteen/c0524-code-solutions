@@ -22,6 +22,10 @@ export function ProductDetails() {
     };
     fetchProduct();
   }, [productId]);
+
+  function handleAddClick(name: string) {
+    alert(`Added ${name} to cart.`);
+  }
   return (
     <>
       <section className="container flex flex-col gap-4 border-b border-l border-r border-gray-400 details">
@@ -45,6 +49,11 @@ export function ProductDetails() {
             <div className="long_description">
               <p className="mb-2">{product.longDescription}</p>
             </div>
+            <button
+              onClick={() => handleAddClick(product.name)}
+              className="px-2 py-1 my-2 bg-gray-300 border-2 rounded-md hover:border-blue-500">
+              Add to Cart
+            </button>
           </>
         ) : (
           <span>{`Product: ${productId} not found`}</span>
