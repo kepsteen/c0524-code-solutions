@@ -16,13 +16,13 @@ type CartProviderProps = {
 };
 
 export function CartProvider({ children }: CartProviderProps) {
-  const [cartContents, setCartContents] = useState<Product[]>([]);
+  const [cart, setCart] = useState<Product[]>([]);
   function addToCart(product: Product) {
-    setCartContents([...cartContents, product]);
+    setCart([...cart, product]);
   }
   const cartContextValues = {
-    cart: cartContents,
-    addToCart: addToCart,
+    cart,
+    addToCart,
   };
   return (
     <CartContext.Provider value={cartContextValues}>
